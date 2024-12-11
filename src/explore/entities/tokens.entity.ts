@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm';
 
 @Entity('tokens')
 @Index('idx_token_address', ['tokenAddress'], { unique: true })
-export class Token {
+export class Tokens {
   @PrimaryGeneratedColumn()
   id: number;
 

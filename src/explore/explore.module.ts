@@ -4,13 +4,13 @@ import { ExploreController } from './explore.controller';
 import { UniswapService } from './uniswap.service';
 import { Multicall3Service } from './multicall3/multicall3.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Token } from './entities/Token.entity';
-import { Pool } from './entities/Pools.entity';
+import { Tokens } from './entities/tokens.entity';
+import { Pool } from './entities/pool.entity';
 import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports:[
-    TypeOrmModule.forFeature([Token,Pool]),
+    TypeOrmModule.forFeature([Tokens,Pool]),
     ScheduleModule.forRoot(),
 
   ],

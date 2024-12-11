@@ -4,10 +4,10 @@ import { ConfigService } from '@nestjs/config';
 import { ethers, Contract } from 'ethers';
 import { Multicall3Service } from './multicall3/multicall3.service';
 import { HSKPrice, USDTPrice } from './price/price';
-import { Token } from './entities/Token.entity';
+import { Tokens } from './entities/tokens.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Pool } from './entities/Pools.entity';
+import { Pool } from './entities/pool.entity';
 import { Cron } from '@nestjs/schedule';
 
 // 添加 ERC20 ABI 常量
@@ -30,8 +30,8 @@ export class UniswapService implements OnModuleInit {
     constructor(
         private configService: ConfigService,
         private multicall3Service: Multicall3Service,
-        @InjectRepository(Token)
-        private tokenRepository: Repository<Token>,
+        @InjectRepository(Tokens)
+        private tokenRepository: Repository<Tokens>,
         @InjectRepository(Pool)
         private poolRepository: Repository<Pool>
     ) {

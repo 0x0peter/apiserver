@@ -2,16 +2,16 @@ import { Injectable } from '@nestjs/common';
 import { CreateExploreDto } from './dto/create-explore.dto';
 import { UpdateExploreDto } from './dto/update-explore.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Token } from './entities/Token.entity';
+import { Tokens } from './entities/tokens.entity';
 import { Repository } from 'typeorm';
-import { Pool } from './entities/Pools.entity';
+import { Pool } from './entities/pool.entity';
 
 @Injectable()
 export class ExploreService {
 
   constructor(
-    @InjectRepository(Token)
-    private tokenRepository: Repository<Token>,
+    @InjectRepository(Tokens)
+    private tokenRepository: Repository<Tokens>,
     @InjectRepository(Pool)
     private poolRepository: Repository<Pool>
 ){}
@@ -25,7 +25,7 @@ export class ExploreService {
   }
 
   async getTokens() {
-    const tokens: Token[] = await this.tokenRepository.find();
+    const tokens: Tokens[] = await this.tokenRepository.find();
     const formattedTokens = tokens.map(token => ({
       id: token.id,
       symbol: token.tokenSymbol,
