@@ -32,7 +32,10 @@ export class ExploreService {
       name: token.tokenName,
       address: token.tokenAddress,
       price: token.price,
-      FDV:token.FDV
+      FDV:token.FDV,
+      change1H:0.00,
+      change24H:0.00,
+      tradingVolume:0,
     }));
 
     return formattedTokens;
@@ -46,7 +49,9 @@ export class ExploreService {
       pairsAddress: pool.pairsAddress,
       pairsName: pool.pairsName,
       TVL: pool.TVL,
-      APY: pool.APY
+      APY: pool.APY,
+      tradingVolume1D:0,
+      tradingVolume30D:0
     }));
 
     return formattedPools;
