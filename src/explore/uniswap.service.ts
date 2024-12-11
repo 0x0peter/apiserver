@@ -7,7 +7,7 @@ import { HSKPrice, USDTPrice } from './price/price';
 import { Token } from './entities/Token.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Pool } from './entities/pools.entity';
+import { Pool } from './entities/Pools.entity';
 import { Cron } from '@nestjs/schedule';
 
 // 添加 ERC20 ABI 常量

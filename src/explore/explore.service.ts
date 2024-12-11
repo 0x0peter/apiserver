@@ -4,7 +4,7 @@ import { UpdateExploreDto } from './dto/update-explore.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Token } from './entities/Token.entity';
 import { Repository } from 'typeorm';
-import { Pool } from './entities/pools.entity';
+import { Pool } from './entities/Pools.entity';
 
 @Injectable()
 export class ExploreService {
