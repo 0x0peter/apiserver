@@ -49,7 +49,7 @@ export class ExploreService {
       pairsAddress: pool.pairsAddress,
       pairsName: pool.pairsName,
       TVL: pool.TVL,
-      APY: pool.APY,
+      APY: pool.APY||0,
       tradingVolume1D:0,
       tradingVolume30D:0
     }));
